@@ -3,7 +3,7 @@ tags:
 position: -10,-118
 ---
 John makes his way into the only tavern in this small town.
-Bartender: Welcome stranger, what bring you into my fine establishment!
+Bartender: Welcome stranger, what brings you into my fine establishment!
     -> I came for a drink
         <<jump Drink>>
     -> I'm looking for two men.
@@ -12,7 +12,7 @@ Bartender: Welcome stranger, what bring you into my fine establishment!
 ===
 
 title: Drink
-position: -170,81
+position: -201,91
 ---
 Bartender: We have Whiskey, Beer and my famous Moonshine!
     -> I'll have a Whiskey
@@ -21,7 +21,7 @@ Bartender: We have Whiskey, Beer and my famous Moonshine!
         <<jump tips>>
     -> I'm feeling adventurous!
         Bartender: Looks like you've had too much to drink
-         <<jump End1>>
+         <<jump Kickedout>>
 ===
 
 title: Brothers
@@ -31,17 +31,17 @@ Bartender: I've had plently of people come through today, why are you looking fo
     ->I have a bounty for the Green Brothers
         <<jump Outside>>
     ->Thats none of your buisness.
-        <<jump End1>>
+        <<jump Kickedout>>
 ===
 
 title: Tips
-position: -229,304
+position: -209,308
 ---
 Bartender: I have a feeling you didn't just come for a drink. What brings you here?
     -> I'm looking for a couple of guys
         <<jump Brothers>>
     -> I only came to drink
-        <<jump End1>>    
+        <<jump Kickedout>>    
 ===
 
 title: Outside
@@ -54,49 +54,82 @@ Bartender: Ah I see. You'll find those bastards outside round back
         <<jump Outback>>
 ===
 
-title: End1
-position: 379,82
+title: Kickedout
+position: 381,92
 ---
 Theres the door dont let it hit you on the way out
 John hears talking around the building
     ->Investigate
         <<jump Outback>>
     ->Leave
-        <<jump End2>>
+        <<jump End1>>
 ===
 
-title: End2
-position: 655,83
+title: End1
+position: 783,93
 ---
 You leave back the way you came theres nothing here for you.
     <<jump start>>
 ===
 
-title: End3
-position: 375,1004
+title: End2
+position: 794,778
 ---
+Darron dodges your charge and stabs John in the neck
 John falls to the ground, he clutches his wound and looks up to the Greens. 
-They look down on you smiling.
-He loose conciousness, it all fades to black.
+They look down on him smiling.
+He looses conciousness, it all fades to black.
 ===
 
 title:Outback
-position: 387,535
+position: 383,545
 ---
 John makes his way to the back where both of the brothers are
     -> You must be the Green brothers
 Darron Green: Oh shit the Huntsman!
 Benjin Green: ...
-Benjin unseethes his sword 
+Benjin unsheathes his sword 
 Benjin Green: You must be here for the bounty
-    -> For 30 gold a person you're damn right I'm here for you
+    -> For 30 gold a person you're damn right
         <<jump Fight>>
     -> Actually I was just on my way
-        <<jump End2>>
+        <<jump End1>>
 ===
 
 title: Fight
 position: 384,779
 ---
-
+John pulls out his sword
+Darron Green: So you've chosen death
+Darron pulls two daggers from his belt
+Benjin Green: You're really willing to die for 60 gold?
+    -> Someone is
+    -> You can drop you're weapons and come with me
+Darron Green: Ha, he really is a fool Benjin!
+Darron runs at John 
+    ->Jump back
+        <<jump Kill>>
+    ->Charge him
+        <<jump End2>>
+===
+title:End3
+position: 788,1000
+---
+John takes the bodies of the Green Brothers and ties them to his horse.
+He rides off to go claim his bounty.
+===
+title: Kill
+position: 384,999
+---
+Darron swings and misses leaving an opening for you to stab him
+    ->Kill
+Darron falls to the ground unmoving.
+Benjin Green: No. you'll die for that!
+Benjin runs at you in a frenzy.
+    ->Side step him
+Benjin swings and misses you. He becomes off balance
+    ->Kick him into the mud
+Benjin falls face first into the mud
+    ->Strike down on him
+        <<jump End3>>
 ===
