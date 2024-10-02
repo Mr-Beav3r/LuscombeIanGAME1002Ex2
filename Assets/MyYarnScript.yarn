@@ -18,7 +18,7 @@ Bartender: We have Whiskey, Beer and my famous Moonshine!
     -> I'll have a Whiskey
         <<jump Tips>>
     -> Pour me a Beer
-        <<jump tips>>
+        <<jump Tips>>
     -> I'm feeling adventurous!
         Bartender: Looks like you've had too much to drink
          <<jump Kickedout>>
