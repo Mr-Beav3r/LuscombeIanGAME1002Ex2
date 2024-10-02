@@ -1,0 +1,102 @@
+﻿title: Start
+tags:
+position: -10,-118
+---
+John makes his way into the only tavern in this small town.
+Bartender: Welcome stranger, what bring you into my fine establishment!
+    -> I came for a drink
+        <<jump Drink>>
+    -> I'm looking for two men.
+        <<jump Brothers>>
+
+===
+
+title: Drink
+position: -170,81
+---
+Bartender: We have Whiskey, Beer and my famous Moonshine!
+    -> I'll have a Whiskey
+        <<jump Tips>>
+    -> Pour me a Beer
+        <<jump tips>>
+    -> I'm feeling adventurous!
+        Bartender: Looks like you've had too much to drink
+         <<jump End1>>
+===
+
+title: Brothers
+position: 81,313
+---
+Bartender: I've had plently of people come through today, why are you looking for these men?
+    ->I have a bounty for the Green Brothers
+        <<jump Outside>>
+    ->Thats none of your buisness.
+        <<jump End1>>
+===
+
+title: Tips
+position: -229,304
+---
+Bartender: I have a feeling you didn't just come for a drink. What brings you here?
+    -> I'm looking for a couple of guys
+        <<jump Brothers>>
+    -> I only came to drink
+        <<jump End1>>    
+===
+
+title: Outside
+position: 83,545
+---
+Bartender: Ah I see. You'll find those bastards outside round back
+    ->Thank you (leave and go out back)
+        <<jump Outback>>
+    ->(Say nothing and go around back)
+        <<jump Outback>>
+===
+
+title: End1
+position: 379,82
+---
+Theres the door dont let it hit you on the way out
+John hears talking around the building
+    ->Investigate
+        <<jump Outback>>
+    ->Leave
+        <<jump End2>>
+===
+
+title: End2
+position: 655,83
+---
+You leave back the way you came theres nothing here for you.
+    <<jump start>>
+===
+
+title: End3
+position: 375,1004
+---
+John falls to the ground, he clutches his wound and looks up to the Greens. 
+They look down on you smiling.
+He loose conciousness, it all fades to black.
+===
+
+title:Outback
+position: 387,535
+---
+John makes his way to the back where both of the brothers are
+    -> You must be the Green brothers
+Darron Green: Oh shit the Huntsman!
+Benjin Green: ...
+Benjin unseethes his sword 
+Benjin Green: You must be here for the bounty
+    -> For 30 gold a person you're damn right I'm here for you
+        <<jump Fight>>
+    -> Actually I was just on my way
+        <<jump End2>>
+===
+
+title: Fight
+position: 384,779
+---
+
+===
